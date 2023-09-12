@@ -1,0 +1,11 @@
+version: '3.8'  # Versión de la sintaxis de Docker Compose
+
+services: # Servicios que se van a ejecutar
+  openjdk: # Nombre del servicio
+    build: # Ruta de la carpeta donde se encuentra el Dockerfile para la imagen.
+        context: . # Ruta de la carpeta donde se encuentra el Dockerfile para la imagen.
+        dockerfile: Dockerfile # Nombre del archivo Dockerfile
+    container_name: pokedexApi # Nombre del contenedor
+    restart: on-failure # Reiniciar el contenedor en caso de fallo
+    ports:
+      - "8080:8080" # Puerto de la aplicación
